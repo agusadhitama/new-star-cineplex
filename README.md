@@ -9,7 +9,7 @@ Website resmi **New Star Cineplex** - jaringan bioskop terbesar di Indonesia den
 
 ## 🌐 Live Demo
 
-[newstarcineplex.github.io](https://newstarcineplex.github.io) *(ganti setelah deploy)*
+- https://agusadhitama.github.io/new-star-cineplex/
 
 ---
 
@@ -51,28 +51,6 @@ new-star-cineplex/
 
 ---
 
-## 🚀 Deploy ke GitHub Pages
-
-### 1. Clone / Upload ke GitHub
-```bash
-git init
-git add .
-git commit -m "Initial commit: New Star Cineplex website"
-git remote add origin https://github.com/USERNAME/new-star-cineplex.git
-git push -u origin main
-```
-
-### 2. Aktifkan GitHub Pages
-1. Buka repo di GitHub
-2. Klik **Settings** → **Pages**
-3. Di bagian *Source*, pilih **Deploy from a branch**
-4. Pilih branch `main`, folder `/ (root)`
-5. Klik **Save**
-
-Website akan aktif di: `https://USERNAME.github.io/new-star-cineplex`
-
----
-
 ## 🎨 Desain
 
 - **Font**: Bebas Neue (display) + DM Sans (body) + Playfair Display (aksen italic)
@@ -111,4 +89,4 @@ Untuk menambah film baru:
 
 ## 📄 Lisensi
 
-© 2025 New Star Cineplex. Dibuat untuk keperluan portofolio/demo.
+© 2026 New Star Cineplex | Agus Satria Adhitama | Dibuat untuk keperluan portofolio/demo.

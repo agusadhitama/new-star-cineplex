@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jadwal Tayang - New Star Cineplex</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <nav class="nav scrolled" id="nav">
+    <a href="../index.html" class="nav-logo">
+      <span class="logo-star">★</span>
+      <span class="logo-text">NEW STAR<br><em>CINEPLEX</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="films.html">Film</a></li>
+      <li><a href="cinemas.html">Bioskop</a></li>
+      <li><a href="schedule.html" style="color:var(--gold)">Jadwal</a></li>
+      <li><a href="promo.html">Promo</a></li>
+      <li><a href="about.html">Tentang</a></li>
+    </ul>
+    <a href="booking.html" class="btn-book">Pesan Tiket</a>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="films.html">Film</a></li>
+      <li><a href="cinemas.html">Bioskop</a></li>
+      <li><a href="schedule.html">Jadwal</a></li>
+      <li><a href="promo.html">Promo</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="booking.html" class="btn-book">Pesan Tiket</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="label">Jadwal Tayang</span>
+      <h1>Pilih <em>Waktu</em> & Studio</h1>
+      <p>Lihat jadwal lengkap semua film yang sedang tayang di New Star Cineplex cabang pilihan Anda.</p>
+    </div>
+  </section>
+
+  <section class="schedule-section" style="background: var(--black);">
+    <div class="container">
+
+      <!-- CINEMA SELECT -->
+      <div style="margin-bottom:2rem;">
+        <label style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.5rem;">Pilih Bioskop</label>
+        <select id="cinemaSelect" style="background:var(--dark2); border:1px solid rgba(255,255,255,0.12); color:var(--white); padding:0.75rem 1.25rem; border-radius:var(--radius); font-family:var(--font-body); font-size:0.9rem; width:100%; max-width:400px; cursor:pointer;">
+          <option value="">-- Pilih lokasi --</option>
+        </select>
+      </div>
+
+      <!-- DATE TABS -->
+      <div class="schedule-date-tabs" id="dateTabs"></div>
+
+      <!-- SHOWTIMES -->
+      <div id="showtimesContainer"></div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none; padding-top:0;">
+        <p>© 2025 New Star Cineplex.</p>
+        <a href="../index.html" style="color:var(--gold); font-size:0.8rem;">← Kembali ke Beranda</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/pages.js"></script>
+  <script>renderSchedulePage();</script>
+</body>
+</html>

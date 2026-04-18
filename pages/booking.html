@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pesan Tiket - New Star Cineplex</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <nav class="nav scrolled">
+    <a href="../index.html" class="nav-logo">
+      <span class="logo-star">★</span>
+      <span class="logo-text">NEW STAR<br><em>CINEPLEX</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="films.html">Film</a></li>
+      <li><a href="cinemas.html">Bioskop</a></li>
+      <li><a href="schedule.html">Jadwal</a></li>
+      <li><a href="promo.html">Promo</a></li>
+      <li><a href="about.html">Tentang</a></li>
+    </ul>
+  </nav>
+
+  <div class="booking-container">
+    <div class="container">
+      <!-- STEPS -->
+      <div class="booking-steps">
+        <div class="step active" id="step1">
+          <div class="step-num">1</div>
+          <span class="step-label">Pilih Film & Jadwal</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step" id="step2">
+          <div class="step-num">2</div>
+          <span class="step-label">Pilih Kursi</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step" id="step3">
+          <div class="step-num">3</div>
+          <span class="step-label">Detail & Pembayaran</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step" id="step4">
+          <div class="step-num">4</div>
+          <span class="step-label">Konfirmasi</span>
+        </div>
+      </div>
+
+      <!-- STEP 1: Film Selection -->
+      <div id="bookStep1">
+        <h2 style="font-family:var(--font-display); font-size:2rem; letter-spacing:0.05em; margin-bottom:2rem;">Pilih Film & Jadwal</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2rem;">
+          <div>
+            <label style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.5rem;">Film</label>
+            <select id="filmSelect" style="background:var(--dark2); border:1px solid rgba(255,255,255,0.12); color:var(--white); padding:0.75rem 1rem; border-radius:var(--radius); font-family:var(--font-body); width:100%; font-size:0.9rem;">
+              <option value="">-- Pilih Film --</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.5rem;">Bioskop</label>
+            <select id="cinemaSelectBook" style="background:var(--dark2); border:1px solid rgba(255,255,255,0.12); color:var(--white); padding:0.75rem 1rem; border-radius:var(--radius); font-family:var(--font-body); width:100%; font-size:0.9rem;">
+              <option value="">-- Pilih Bioskop --</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-bottom:2rem;">
+          <label style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.75rem;">Tanggal</label>
+          <div class="schedule-date-tabs" id="bookDateTabs"></div>
+        </div>
+        <div id="bookShowtimes"></div>
+        <div style="margin-top:2rem; text-align:right;">
+          <button class="btn-primary" id="goToSeats" disabled style="opacity:0.4; cursor:not-allowed;">Pilih Kursi →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Seat Selection -->
+      <div id="bookStep2" style="display:none;">
+        <div style="display:grid; grid-template-columns:1fr 340px; gap:2rem; align-items:start;">
+          <div>
+            <h2 style="font-family:var(--font-display); font-size:2rem; letter-spacing:0.05em; margin-bottom:0.5rem;">Pilih Kursi</h2>
+            <p style="color:var(--gray); font-size:0.875rem; margin-bottom:2rem;">Klik kursi yang tersedia untuk memilih. Klik lagi untuk membatalkan pilihan.</p>
+            <div class="seat-map-section" id="seatMap"></div>
+          </div>
+          <div>
+            <div class="ticket-summary" id="ticketSummary">
+              <h3>Ringkasan Tiket</h3>
+              <div id="summaryContent">
+                <p style="color:var(--gray); font-size:0.875rem;">Pilih kursi untuk melihat detail.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:2rem; display:flex; gap:1rem; justify-content:space-between;">
+          <button class="btn-ghost" id="backToStep1">← Kembali</button>
+          <button class="btn-primary" id="goToPayment" disabled style="opacity:0.4; cursor:not-allowed;">Lanjut ke Pembayaran →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Payment -->
+      <div id="bookStep3" style="display:none;">
+        <h2 style="font-family:var(--font-display); font-size:2rem; letter-spacing:0.05em; margin-bottom:2rem;">Detail & Pembayaran</h2>
+        <div style="display:grid; grid-template-columns:1fr 340px; gap:2rem;">
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            <div style="background:var(--dark2); border:1px solid rgba(255,255,255,0.06); border-radius:var(--radius-lg); padding:1.75rem;">
+              <h3 style="font-family:var(--font-display); letter-spacing:0.06em; margin-bottom:1.25rem; font-size:1.2rem;">Data Pemesan</h3>
+              <div style="display:flex; flex-direction:column; gap:1rem;">
+                <input type="text" placeholder="Nama Lengkap" style="background:var(--dark3); border:1px solid rgba(255,255,255,0.1); color:var(--white); padding:0.75rem 1rem; border-radius:var(--radius); font-family:var(--font-body); font-size:0.875rem; outline:none; width:100%;" />
+                <input type="email" placeholder="Alamat Email" style="background:var(--dark3); border:1px solid rgba(255,255,255,0.1); color:var(--white); padding:0.75rem 1rem; border-radius:var(--radius); font-family:var(--font-body); font-size:0.875rem; outline:none; width:100%;" />
+                <input type="tel" placeholder="Nomor Handphone" style="background:var(--dark3); border:1px solid rgba(255,255,255,0.1); color:var(--white); padding:0.75rem 1rem; border-radius:var(--radius); font-family:var(--font-body); font-size:0.875rem; outline:none; width:100%;" />
+              </div>
+            </div>
+            <div style="background:var(--dark2); border:1px solid rgba(255,255,255,0.06); border-radius:var(--radius-lg); padding:1.75rem;">
+              <h3 style="font-family:var(--font-display); letter-spacing:0.06em; margin-bottom:1.25rem; font-size:1.2rem;">Metode Pembayaran</h3>
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem;" id="paymentMethods"></div>
+            </div>
+          </div>
+          <div class="ticket-summary" id="ticketSummary2" style="position:sticky; top:calc(var(--nav-h) + 1rem);"></div>
+        </div>
+        <div style="margin-top:2rem; display:flex; gap:1rem; justify-content:space-between;">
+          <button class="btn-ghost" id="backToStep2">← Kembali</button>
+          <button class="btn-primary" id="confirmOrder">Bayar Sekarang ★</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Confirmation -->
+      <div id="bookStep4" style="display:none; text-align:center; padding:4rem 0;">
+        <div style="font-size:5rem; margin-bottom:1.5rem;">🎟️</div>
+        <h2 style="font-family:var(--font-display); font-size:3rem; letter-spacing:0.05em; margin-bottom:1rem; color:var(--gold);">Pemesanan Berhasil!</h2>
+        <p style="color:var(--gray); max-width:480px; margin:0 auto 2rem; line-height:1.7;">Tiket Anda telah dikonfirmasi. E-tiket akan dikirim ke email Anda dalam beberapa menit. Tunjukkan e-tiket di loket atau scan di turnstile bioskop.</p>
+        <div style="display:inline-block; background:var(--dark2); border:1px solid rgba(201,168,76,0.2); border-radius:var(--radius-lg); padding:2rem; margin-bottom:2rem; text-align:left; min-width:300px;" id="confirmTicket"></div>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="films.html" class="btn-primary">Lihat Film Lainnya</a>
+          <a href="../index.html" class="btn-ghost">Kembali ke Beranda</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/pages.js"></script>
+  <script>renderBookingPage();</script>
+</body>
+</html>

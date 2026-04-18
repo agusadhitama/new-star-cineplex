@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Star Cineplex</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-star">★</span>
+      <span class="logo-text">NEW STAR<br><em>CINEPLEX</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="pages/films.html">Film</a></li>
+      <li><a href="pages/cinemas.html">Bioskop</a></li>
+      <li><a href="pages/schedule.html">Jadwal</a></li>
+      <li><a href="pages/promo.html">Promo</a></li>
+      <li><a href="pages/about.html">Tentang</a></li>
+    </ul>
+    <a href="pages/booking.html" class="btn-book">Pesan Tiket</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="pages/films.html">Film</a></li>
+      <li><a href="pages/cinemas.html">Bioskop</a></li>
+      <li><a href="pages/schedule.html">Jadwal</a></li>
+      <li><a href="pages/promo.html">Promo</a></li>
+      <li><a href="pages/about.html">Tentang</a></li>
+      <li><a href="pages/booking.html" class="btn-book">Pesan Tiket</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="film-strip" id="filmStrip"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tagline">38 Cabang · Seluruh Indonesia</p>
+      <h1 class="hero-title">
+        <span class="line1">RASAKAN</span>
+        <span class="line2"><em>Keajaiban</em></span>
+        <span class="line3">LAYAR BESAR</span>
+      </h1>
+      <p class="hero-sub">Pengalaman sinema premium dengan teknologi terkini, kenyamanan terbaik, dan film-film pilihan untuk semua.</p>
+      <div class="hero-cta">
+        <a href="pages/films.html" class="btn-primary">Lihat Film Tayang</a>
+        <a href="pages/cinemas.html" class="btn-ghost">Cari Bioskop</a>
+      </div>
+    </div>
+    <div class="hero-ticker">
+      <div class="ticker-track" id="tickerTrack">
+        <span>NOW SHOWING</span><span class="sep">✦</span>
+        <span>PENGABDI SETAN 3</span><span class="sep">✦</span>
+        <span>DUNE: PART THREE</span><span class="sep">✦</span>
+        <span>LASKAR PELANGI 2</span><span class="sep">✦</span>
+        <span>AVENGERS: FINAL WAR</span><span class="sep">✦</span>
+        <span>ANTOLOGI NUSANTARA</span><span class="sep">✦</span>
+        <span>COMING SOON</span><span class="sep">✦</span>
+        <span>SUPERHERO INDONESIA</span><span class="sep">✦</span>
+        <span>NOW SHOWING</span><span class="sep">✦</span>
+        <span>PENGABDI SETAN 3</span><span class="sep">✦</span>
+        <span>DUNE: PART THREE</span><span class="sep">✦</span>
+        <span>LASKAR PELANGI 2</span><span class="sep">✦</span>
+        <span>AVENGERS: FINAL WAR</span><span class="sep">✦</span>
+        <span>ANTOLOGI NUSANTARA</span><span class="sep">✦</span>
+        <span>COMING SOON</span><span class="sep">✦</span>
+        <span>SUPERHERO INDONESIA</span><span class="sep">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOW SHOWING -->
+  <section class="section-nowshowing">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Sedang Tayang</span>
+        <h2>Film Pilihan <em>Minggu Ini</em></h2>
+        <a href="pages/films.html" class="see-all">Lihat Semua →</a>
+      </div>
+      <div class="films-grid" id="filmsGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="stats-band">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-num" data-count="38">0</span>
+          <span class="stat-label">Cabang Aktif</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="240">0</span>
+          <span class="stat-label">Studio Premium</span>
+        </div>
+        <div class="stat-num-wrapper stat-item">
+          <span class="stat-num" data-count="5">0</span>
+          <span class="stat-suffix">Juta+</span>
+          <span class="stat-label">Penonton / Tahun</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="14">0</span>
+          <span class="stat-label">Kota Besar</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section-experience">
+    <div class="container">
+      <div class="section-header center">
+        <span class="label">Teknologi Kami</span>
+        <h2>Lebih dari Sekadar <em>Menonton</em></h2>
+      </div>
+      <div class="exp-grid">
+        <div class="exp-card">
+          <div class="exp-icon">◉</div>
+          <h3>IMAX Experience</h3>
+          <p>Layar raksasa dengan resolusi kristal jernih dan suara yang memenuhi ruangan. Rasakan perbedaannya.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">◈</div>
+          <h3>Dolby Atmos</h3>
+          <p>Sistem suara 3D imersif dengan 64 speaker yang menempatkan suara tepat di posisi yang dimaksud sutradara.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">◇</div>
+          <h3>4DX Studio</h3>
+          <p>Kursi bergerak, efek angin, air, dan aroma. Film bukan hanya ditonton—tapi dirasakan seluruh tubuh.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">◎</div>
+          <h3>NSC Gold Class</h3>
+          <p>Ruang eksklusif dengan sofa recliner, layanan butler, dan menu fine dining selama film berlangsung.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">⊕</div>
+          <h3>Screen X</h3>
+          <p>Tiga layar yang membungkus Anda di sisi kiri, tengah, dan kanan. Lebar 270 derajat yang menakjubkan.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon">⊙</div>
+          <h3>NSC Junior</h3>
+          <p>Studio khusus keluarga dengan desain ramah anak, kursi ekstra lebar, dan program film edukatif.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMING SOON -->
+  <section class="section-coming">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Segera Hadir</span>
+        <h2>Akan <em>Datang</em></h2>
+        <a href="pages/films.html?tab=soon" class="see-all">Semua Preview →</a>
+      </div>
+      <div class="coming-grid" id="comingGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO BANNER -->
+  <section class="promo-banner">
+    <div class="promo-content">
+      <span class="promo-badge">Promo Spesial</span>
+      <h2>NSC CARD - Nonton Lebih <em>Hemat</em></h2>
+      <p>Dapatkan diskon hingga 50% setiap hari Selasa, poin reward, dan akses prioritas pemesanan tiket.</p>
+      <a href="pages/promo.html" class="btn-primary">Pelajari Lebih Lanjut</a>
+    </div>
+    <div class="promo-visual">
+      <div class="card-mockup">
+        <span class="card-logo">★ NSC CARD</span>
+        <span class="card-name">MEMBER PREMIUM</span>
+        <div class="card-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANCHES MAP TEASER -->
+  <section class="section-branches">
+    <div class="container">
+      <div class="section-header center">
+        <span class="label">Lokasi Kami</span>
+        <h2>38 Cabang di <em>Seluruh Indonesia</em></h2>
+        <p class="section-sub">Dari Aceh hingga Papua, New Star Cineplex hadir di kota-kota utama Indonesia.</p>
+      </div>
+      <div class="branches-islands">
+        <div class="island-group">
+          <h4>Jawa</h4>
+          <ul>
+            <li>Jakarta (5 lokasi)</li>
+            <li>Surabaya (3 lokasi)</li>
+            <li>Bandung (3 lokasi)</li>
+            <li>Semarang (2 lokasi)</li>
+            <li>Yogyakarta (2 lokasi)</li>
+            <li>Malang (2 lokasi)</li>
+          </ul>
+        </div>
+        <div class="island-group">
+          <h4>Sumatra</h4>
+          <ul>
+            <li>Medan (3 lokasi)</li>
+            <li>Palembang (2 lokasi)</li>
+            <li>Pekanbaru (2 lokasi)</li>
+            <li>Batam (1 lokasi)</li>
+            <li>Banda Aceh (1 lokasi)</li>
+          </ul>
+        </div>
+        <div class="island-group">
+          <h4>Kalimantan & Sulawesi</h4>
+          <ul>
+            <li>Balikpapan (2 lokasi)</li>
+            <li>Banjarmasin (1 lokasi)</li>
+            <li>Makassar (2 lokasi)</li>
+            <li>Manado (1 lokasi)</li>
+          </ul>
+        </div>
+        <div class="island-group">
+          <h4>Bali & Timur</h4>
+          <ul>
+            <li>Denpasar (2 lokasi)</li>
+            <li>Lombok (1 lokasi)</li>
+            <li>Kupang (1 lokasi)</li>
+            <li>Jayapura (1 lokasi)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="center" style="margin-top:3rem;">
+        <a href="pages/cinemas.html" class="btn-primary">Temukan Cabang Terdekat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-star">★</span>
+            <span class="logo-text">NEW STAR<br><em>CINEPLEX</em></span>
+          </a>
+          <p>Menghadirkan pengalaman sinema terbaik untuk seluruh keluarga Indonesia sejak 2005.</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Twitter/X">X</a>
+            <a href="#" aria-label="TikTok">TK</a>
+            <a href="#" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Film</h5>
+          <ul>
+            <li><a href="pages/films.html">Sedang Tayang</a></li>
+            <li><a href="pages/films.html?tab=soon">Segera Hadir</a></li>
+            <li><a href="pages/films.html?tab=special">Film Spesial</a></li>
+            <li><a href="pages/films.html?tab=kids">Film Anak</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Bioskop</h5>
+          <ul>
+            <li><a href="pages/cinemas.html">Cari Lokasi</a></li>
+            <li><a href="pages/cinemas.html?type=imax">IMAX</a></li>
+            <li><a href="pages/cinemas.html?type=4dx">4DX</a></li>
+            <li><a href="pages/cinemas.html?type=gold">Gold Class</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Info</h5>
+          <ul>
+            <li><a href="pages/promo.html">Promo & Diskon</a></li>
+            <li><a href="pages/about.html">Tentang Kami</a></li>
+            <li><a href="pages/about.html#career">Karir</a></li>
+            <li><a href="pages/about.html#contact">Hubungi Kami</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 New Star Cineplex. Semua hak dilindungi.</p>
+        <div class="footer-legal">
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">Syarat & Ketentuan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

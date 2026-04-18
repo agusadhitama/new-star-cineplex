@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bioskop - New Star Cineplex</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <nav class="nav scrolled" id="nav">
+    <a href="../index.html" class="nav-logo">
+      <span class="logo-star">★</span>
+      <span class="logo-text">NEW STAR<br><em>CINEPLEX</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="films.html">Film</a></li>
+      <li><a href="cinemas.html" style="color:var(--gold)">Bioskop</a></li>
+      <li><a href="schedule.html">Jadwal</a></li>
+      <li><a href="promo.html">Promo</a></li>
+      <li><a href="about.html">Tentang</a></li>
+    </ul>
+    <a href="booking.html" class="btn-book">Pesan Tiket</a>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="films.html">Film</a></li>
+      <li><a href="cinemas.html">Bioskop</a></li>
+      <li><a href="schedule.html">Jadwal</a></li>
+      <li><a href="promo.html">Promo</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="booking.html" class="btn-book">Pesan Tiket</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="label">38 Cabang</span>
+      <h1>Temukan <em>Bioskop</em></h1>
+      <p>New Star Cineplex hadir di 14 kota besar di seluruh Indonesia dengan teknologi sinema terkini.</p>
+    </div>
+  </section>
+
+  <section style="padding: 4rem 0; background: var(--black);">
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-area="all">Semua</button>
+        <button class="filter-btn" data-area="Jawa">Jawa</button>
+        <button class="filter-btn" data-area="Sumatra">Sumatra</button>
+        <button class="filter-btn" data-area="Kalimantan">Kalimantan</button>
+        <button class="filter-btn" data-area="Sulawesi">Sulawesi</button>
+        <button class="filter-btn" data-area="Bali & Timur">Bali & Timur</button>
+        <div class="search-bar">
+          <span>🔍</span>
+          <input type="text" id="cinemaSearch" placeholder="Cari bioskop atau kota..." />
+        </div>
+      </div>
+      <div class="cinemas-grid" id="cinemasGrid"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none; padding-top:0;">
+        <p>© 2025 New Star Cineplex.</p>
+        <a href="../index.html" style="color:var(--gold); font-size:0.8rem;">← Kembali ke Beranda</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/pages.js"></script>
+  <script>renderCinemasPage();</script>
+</body>
+</html>
